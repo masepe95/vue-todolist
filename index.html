@@ -30,31 +30,11 @@
                 </div>
                 <p class="text-center">Click on task to complete it</p>
                 <ul class="list-unstyled">
-                    <li class="d-flex align-items-center justify-content-between">
+                    <li v-for="task in toDoTasks" :key="task.id"
+                        class="d-flex align-items-center justify-content-between">
                         <label class="flex-grow-1">
                             <input type="checkbox" class="form-check-input me-2">
-                            Studiare
-                        </label>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
-                    </li>
-                    <li class="d-flex align-items-center justify-content-between">
-                        <label class="flex-grow-1">
-                            <input type="checkbox" class="form-check-input me-2">
-                            Leggere
-                        </label>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
-                    </li>
-                    <li class="d-flex align-items-center justify-content-between">
-                        <label class="flex-grow-1">
-                            <input type="checkbox" class="form-check-input me-2">
-                            Allenarsi
-                        </label>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
-                    </li>
-                    <li class="d-flex align-items-center justify-content-between">
-                        <label class="flex-grow-1">
-                            <input type="checkbox" class="form-check-input me-2">
-                            Riposare
+                            {{ task.text }}
                         </label>
                         <button type="button" class="btn-close" aria-label="Close"></button>
                     </li>

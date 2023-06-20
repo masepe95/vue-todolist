@@ -1,20 +1,45 @@
-console.log('JS OK' Vue) 
+console.log('JS OK', Vue) 
 
 const app = Vue.createApp({
     name: 'Todolist',
     data() {
-        return {};
+        return {
+            tasks: [
+                {
+                    id: 1,
+                    done: false,
+                    text: 'Studiare'
+                },
+                {
+                    id: 2,
+                    done: false,
+                    text: 'Leggere'
+                },
+                {
+                    id: 3,
+                    done: false,
+                    text: 'Allenarsi'
+                },
+                {
+                    id: 4,
+                    done: false,
+                    text: 'Riposare'
+                }
+            ]
+        };
     },
 
     computed: {
-
-    },
-
-    methods: {
+        completedTasks() {
+            return this.tasks.filter(task => task.done);
+        },
+        toDoTasks() {
+            return this.tasks.filter(task => !task.done);
+        }
 
     }
-
 })
+
 
 
 app.mount('#root');
