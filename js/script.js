@@ -37,6 +37,12 @@ const app = Vue.createApp({
             return this.tasks.filter(task => !task.done);
         }
 
+    }, 
+    
+    methods: {
+        deleteTask(taskToDeleteId) {
+            this.tasks = this.tasks.filter(({ id }) => id !== taskToDeleteId)
+        }
     }
 })
 

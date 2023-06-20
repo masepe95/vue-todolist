@@ -36,7 +36,7 @@
                             <input v-model="task.done" type="checkbox" class="form-check-input me-2">
                             {{ task.text }}
                         </label>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
+                        <button @click="deleteTask(task.id)" type="button" class="btn-close"></button>
                     </li>
                 </ul>
             </div>
@@ -52,7 +52,7 @@
                             <input v-model="task.done" type="checkbox" class="form-check-input me-2">
                          {{ task.text }}
                         </label>
-                        <button type="button" class="btn-close"></button>
+                        <button @click="deleteTask(task.id)" type="button" class="btn-close"></button>
                     </li>
                 </ul>
             </div>
