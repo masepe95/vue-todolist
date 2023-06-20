@@ -21,9 +21,9 @@
     <div id="root">
 
 
-        <div class="container-sm bg-success text-white">
+        <div class="container-sm bg-warning">
 
-            <div class="mb-5">
+            <div class="mb-1">
                 <h2 class="my-4 text-center">TO DO TASKS</h2>
                 <div class="d-flex justify-content-center my-3">
                     <input class="form-control w-25" type="search" placeholder="Filtra" aria-label="Search">
@@ -33,7 +33,7 @@
                     <li v-for="task in toDoTasks" :key="task.id"
                         class="d-flex align-items-center justify-content-between">
                         <label class="flex-grow-1">
-                            <input type="checkbox" class="form-check-input me-2">
+                            <input v-model="task.done" type="checkbox" class="form-check-input me-2">
                             {{ task.text }}
                         </label>
                         <button type="button" class="btn-close" aria-label="Close"></button>
@@ -42,8 +42,20 @@
             </div>
         </div>
 
-
-
+        <div class="container-sm bg-success text-white">
+            <h2 class="mb-4 text-center">Completed tasks</h2>
+            <p class="text-center">Click on task to move it to 'To Do Tasks'</p>
+            <ul class="list-unstyled">
+                <li v-for="task in completedTasks" :key="task.id"
+                        class="d-flex align-items-center justify-content-between">
+                        <label class="flex-grow-1">
+                            <input v-model="task.done" type="checkbox" class="form-check-input me-2">
+                         {{ task.text }}
+                        </label>
+                        <button type="button" class="btn-close"></button>
+                    </li>
+                </ul>
+            </div>
 
 
 
