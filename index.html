@@ -39,8 +39,16 @@
                         <button @click="deleteTask(task.id)" type="button" class="btn-close"></button>
                     </li>
                 </ul>
+                <div class="d-flex justify-content-center my-4 py-4">
+                    <div class="input-group w-25" id="add-task">
+                        <input v-model="newTask" v-on:keyup.enter="addTask" type="text" class="form-control"
+                        placeholder="Add a task" ref="addInput">
+                    <button @click="addTask" class="btn btn-outline-secondary" type="button">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
+        
 
         <div class="container-sm bg-success text-white">
             <h2 class="mb-4 text-center">Completed tasks</h2>
